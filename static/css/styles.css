@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.status {
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.status.loading {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status.ready {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.calculator-section {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e9ecef;
+}
+
+.calculator-section h3 {
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="number"] {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Courier New', monospace;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.result {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 50px;
+    border: 2px solid #dee2e6;
+    font-family: 'Courier New', monospace;
+}
+
+.result:empty {
+    display: none;
+}
+
+.result .time {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.result .count {
+    color: #667eea;
+    font-weight: bold;
+}
+
+.result .value {
+    color: #495057;
+    word-break: break-all;
+}
+
+.info-box {
+    background: #e7f3ff;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.info-box p {
+    color: #495057;
+    line-height: 1.6;
+}
+
+.highlight {
+    background: #667eea;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.comparison {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border: 3px solid #667eea;
+}
+
+.btn-large {
+    width: 100%;
+    font-size: 1.2em;
+    padding: 18px;
+}
+
+.comparison-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.comparison-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #dee2e6;
+}
+
+.comparison-card.winner {
+    border-color: #28a745;
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.3);
+}
+
+.comparison-card h4 {
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+.comparison-card .language {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+.comparison-card .time-value {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #667eea;
+    margin: 10px 0;
+}
+
+.comparison-card.winner .time-value {
+    color: #28a745;
+}
+
+.comparison-card .result-value {
+    font-family: 'Courier New', monospace;
+    color: #495057;
+    margin-top: 10px;
+}
+
+.speedup {
+    grid-column: 1 / -1;
+    background: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    button {
+        width: 100%;
+    }
+    
+    .comparison-results {
+        grid-template-columns: 1fr;
+    }
+}

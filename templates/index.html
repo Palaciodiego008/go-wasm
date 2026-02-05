@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go WASM - Calculadora Matemática</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧮 Go + WASM</h1>
+        <p class="subtitle">Código Go portable en el navegador</p>
+
+        <div id="status" class="status loading">Cargando Go WASM...</div>
+
+        <!-- Fibonacci -->
+        <div class="calculator-section">
+            <h3>🔢 Fibonacci (Recursivo)</h3>
+            <p class="description">Algoritmo recursivo - muy intensivo en CPU</p>
+            <div class="input-group">
+                <input type="number" id="fibInput" value="40" min="1" max="45">
+                <button onclick="calculateFibonacci()" class="btn-primary">Calcular</button>
+            </div>
+            <div class="result" id="fibResult"></div>
+        </div>
+
+        <!-- Números Primos -->
+        <div class="calculator-section">
+            <h3>🎯 Números Primos</h3>
+            <p class="description">Encuentra todos los primos hasta N</p>
+            <div class="input-group">
+                <input type="number" id="primeInput" value="10000" min="1" max="1000000">
+                <button onclick="calculatePrimes()" class="btn-primary">Calcular</button>
+            </div>
+            <div class="result" id="primeResult"></div>
+        </div>
+
+        <!-- Factorial -->
+        <div class="calculator-section">
+            <h3>📊 Factorial</h3>
+            <p class="description">Cálculo recursivo de factorial</p>
+            <div class="input-group">
+                <input type="number" id="factInput" value="20" min="1" max="30">
+                <button onclick="calculateFactorial()" class="btn-primary">Calcular</button>
+            </div>
+            <div class="result" id="factResult"></div>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="calculator-section">
+            <h3>📈 Estadísticas de Array</h3>
+            <p class="description">Procesa 1 millón de números</p>
+            <button onclick="calculateStatistics()" class="btn-primary">Generar y Analizar</button>
+            <div class="result" id="statsResult"></div>
+        </div>
+
+        <div class="info-box">
+            <p><strong>💡 Nota:</strong> Estos cálculos se ejecutan en <span class="highlight">Go compilado a WebAssembly</span>, el mismo código que podrías usar en tu backend.</p>
+        </div>
+    </div>
+
+    <script src="/static/js/wasm_exec.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
